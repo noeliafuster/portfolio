@@ -240,19 +240,45 @@
   const formSuccess = document.getElementById('formSuccess');
 
   if (contactForm && formSuccess) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('.btn-submit');
+      const originalBtnContent = btn.innerHTML;
+
       if (btn) {
-        btn.textContent = 'Enviando...';
+        btn.innerHTML = 'Enviando...';
         btn.disabled = true;
         btn.style.opacity = '0.7';
       }
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        formSuccess.hidden = false;
-        formSuccess.focus();
-      }, 1200);
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          formSuccess.hidden = false;
+          formSuccess.style.display = 'flex'; // Aseguramos que se vea
+          formSuccess.focus();
+        } else {
+          alert('Ups! Hubo un problema con el envío. Por favor, inténtalo de nuevo o contacta directamente por WhatsApp.');
+          btn.innerHTML = originalBtnContent;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      } catch (error) {
+        alert('Error de conexión. Revisa tu internet e inténtalo de nuevo.');
+        btn.innerHTML = originalBtnContent;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }
     });
   }
 
@@ -427,6 +453,9 @@
     if (!modal || !modalBody) return;
     modalBody.innerHTML = '';
 
+    // Reset size class
+    modal.classList.remove('is-large');
+
     const titleEl = document.getElementById('modalTitle');
     if (titleEl) titleEl.textContent = modalTitles[id] || 'Caso de estudio';
 
@@ -435,7 +464,10 @@
     else if (id === 'mkt-espinosa') renderGenericImage(modalBody, 'Marketing/EspinosaFeed.jpg');
     else if (id === 'data-transport') renderTransportVideo(modalBody);
     else if (id === 'data-rrhh') renderRRHHVideo(modalBody);
-    else if (id === 'web-dentista') renderDentistaVideo(modalBody);
+    else if (id === 'web-dentista') {
+      modal.classList.add('is-large');
+      renderDentistaVideo(modalBody);
+    }
     else if (id === 'data-cafeteria') renderCafeteriaVideo(modalBody);
 
     modal.classList.add('active');
@@ -445,6 +477,7 @@
   function closeModal() {
     if (!modal) return;
     modal.classList.remove('active');
+    modal.classList.remove('is-large');
     document.body.style.overflow = '';
     
     // Detener videos
