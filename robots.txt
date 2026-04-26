@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://noeliafuster.com/sitemap.xml
+
+# Noelia Fuster — Consultora de Transformación Digital
+# https://noeliafuster.com

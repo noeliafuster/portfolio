@@ -10,7 +10,7 @@
   const cursor     = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
 
-  if (cursor && cursorRing && window.matchMedia('(hover: hover)').matches) {
+  if (cursor && cursorRing) {
     let mx = 0, my = 0, cx = 0, cy = 0, rx = 0, ry = 0;
     let initialMove = false;
 
