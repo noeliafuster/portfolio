@@ -69,25 +69,29 @@ html {
    Evita el efecto "mucho zoom" en portátiles ajustando la medida base (rem). */
 @media (max-width: 1600px) {
   html {
-    font-size: 15px; /* Reduce ligeramente todo un 6.25% */
+    font-size: 15px;
+    /* Reduce ligeramente todo un 6.25% */
   }
 }
 
 @media (max-width: 1440px) {
   html {
-    font-size: 14px; /* Portátiles de 13/15 pulgadas: reduce todo un 12.5% */
+    font-size: 14px;
+    /* Portátiles de 13/15 pulgadas: reduce todo un 12.5% */
   }
 }
 
 @media (max-width: 1024px) {
   html {
-    font-size: 13px; /* Tablets */
+    font-size: 13px;
+    /* Tablets */
   }
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 14.5px; /* En móvil compensamos un poco para legibilidad */
+    font-size: 14.5px;
+    /* En móvil compensamos un poco para legibilidad */
   }
 }
 
@@ -327,6 +331,7 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
 
 /* Ensure no default cursor anywhere */
 @media (hover: hover) and (pointer: fine) {
+
   *,
   *::before,
   *::after {
@@ -1986,7 +1991,7 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   }
 
   .about-photo-frame {
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
     max-width: 480px;
   }
 
@@ -3005,19 +3010,24 @@ video {
   html {
     font-size: 14.5px;
   }
+
   .hero-grid {
     gap: 50px;
   }
+
   .impact-dashboard {
     max-width: 420px;
     height: 360px;
   }
+
   .card-main {
     width: 240px;
   }
+
   .section-header {
     margin-bottom: 48px;
   }
+
   .carousel-3d-wrap {
     min-height: 800px;
   }
@@ -3028,6 +3038,7 @@ video {
     min-height: 750px;
     padding: 30px 0 80px;
   }
+
   .carousel-3d-track {
     height: 700px;
   }
@@ -3037,28 +3048,49 @@ video {
   .flip-card {
     height: 340px;
   }
+
   .flip-grid {
     gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .bg-orb-1 { width: 600px; height: 600px; }
-  .bg-orb-2 { width: 500px; height: 500px; }
-  .bg-orb-3 { width: 400px; height: 400px; }
-  .bg-orb-4 { display: none; }
-  .bg-orb-5 { display: none; }
+  .bg-orb-1 {
+    width: 600px;
+    height: 600px;
+  }
+
+  .bg-orb-2 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .bg-orb-3 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .bg-orb-4 {
+    display: none;
+  }
+
+  .bg-orb-5 {
+    display: none;
+  }
 
   .hero-visual {
     min-height: 350px;
   }
+
   .impact-dashboard {
     transform: scale(0.7);
     transform-origin: center;
   }
+
   .card-console {
     display: none;
   }
+
   .dash-conn {
     display: none;
   }
@@ -3069,31 +3101,49 @@ video {
     transform: scale(0.6);
     height: 300px;
   }
+
   .card-time {
     right: -10px;
   }
+
   .card-data-accuracy {
     left: -20px;
   }
 }
 
 @media (max-width: 480px) {
-  .bg-orb-1 { width: 400px; height: 400px; filter: blur(60px); }
-  .bg-orb-2 { width: 300px; height: 300px; filter: blur(60px); }
-  .bg-orb-3 { display: none; }
+  .bg-orb-1 {
+    width: 400px;
+    height: 400px;
+    filter: blur(60px);
+  }
+
+  .bg-orb-2 {
+    width: 300px;
+    height: 300px;
+    filter: blur(60px);
+  }
+
+  .bg-orb-3 {
+    display: none;
+  }
 
   .carousel-3d-wrap {
     min-height: 650px;
   }
+
   .carousel-3d-track {
     height: 620px;
   }
+
   .carousel-slide-inner {
     padding: 24px;
   }
+
   .cs-visual {
     height: 200px;
   }
+
   .carousel-slide.is-vertical .cs-visual {
     height: 350px;
   }
@@ -3104,13 +3154,17 @@ video {
     font-size: 2rem;
     letter-spacing: -0.02em;
   }
+
   .hero-sub {
     font-size: 0.88rem;
   }
+
   .hero-actions {
     gap: 10px;
   }
-  .btn-primary, .btn-ghost {
+
+  .btn-primary,
+  .btn-ghost {
     font-size: 0.82rem;
     padding: 11px 20px;
   }
