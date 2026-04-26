@@ -502,7 +502,7 @@
                 cumplimiento de SLAs. Decisiones basadas en datos, no en intuición.</p>
               <div class="cs-tags"><span>Power BI</span><span>Python</span><span>SQL</span><span>DAX</span></div>
               <div class="cs-visual" data-video="data-transport">
-                <img src="Data/transporte-miniatura.png" alt="Dashboard Empresa de Transporte" loading="lazy">
+                <video src="Data/Transport-Project.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
               </div>
             </div>
           </div>
@@ -552,7 +552,7 @@
               <div class="cs-tags"><span>Power BI</span><span>Finanzas</span><span>Hostelería</span><span>KPIs</span>
               </div>
               <div class="cs-visual" data-video="data-cafeteria">
-                <img src="Data/cafeteria-miniatura.png" alt="Dashboard Origen Café Artesanal" loading="lazy">
+                <video src="Data/Cafeteria-Project.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
               </div>
             </div>
           </div>
@@ -674,38 +674,41 @@
           </div>
         </div>
         <form class="contact-form fade-up" id="contactForm" action="https://formsubmit.co/hola@noeliafuster.com"
-          method="POST" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-name">Nombre</label>
-              <input type="text" id="cf-name" name="name" placeholder="Tu nombre" required autocomplete="name">
+          method="POST">
+          <div id="contactFormContent" style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-name">Nombre</label>
+                <input type="text" id="cf-name" name="name" placeholder="Tu nombre" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="tu@empresa.com" required
+                  autocomplete="email">
+              </div>
             </div>
             <div class="field">
-              <label for="cf-email">Email</label>
-              <input type="email" id="cf-email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
+              <label for="cf-company">Empresa <span class="opt">(opcional)</span></label>
+              <input type="text" id="cf-company" name="company" placeholder="Tu empresa" autocomplete="organization">
             </div>
+            <div class="field">
+              <label for="cf-message">¿En qué te puedo ayudar?</label>
+              <textarea id="cf-message" name="message" rows="5"
+                placeholder="Cuéntame sobre tu proyecto y qué quieres conseguir..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-submit" data-magnetic>
+              Enviar mensaje
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
+              </svg>
+            </button>
           </div>
-          <div class="field">
-            <label for="cf-company">Empresa <span class="opt">(opcional)</span></label>
-            <input type="text" id="cf-company" name="company" placeholder="Tu empresa" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="cf-message">¿En qué te puedo ayudar?</label>
-            <textarea id="cf-message" name="message" rows="5"
-              placeholder="Cuéntame sobre tu proyecto y qué quieres conseguir..." required></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-submit" data-magnetic>
-            Enviar mensaje
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
-            </svg>
-          </button>
-          <div class="form-success" id="formSuccess" aria-live="polite" hidden>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            Mensaje enviado. Te contacto en 24–48h.
+          <div class="form-success" id="formSuccess" aria-live="polite" hidden
+            style="display: none; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; text-align: center; padding: 2rem;">
+            <span>Mensaje enviado correctamente.</span>
+            <button type="button" id="resetFormBtn" class="btn-ghost"
+              style="padding: 6px 14px; font-size: 0.85rem; width: fit-content;">Haz click aquí si quieres volver a
+              enviar otro mensaje</button>
           </div>
         </form>
       </div>
@@ -758,11 +761,30 @@
     <div class="video-modal-container">
       <video id="transportVideo" src="Data/Transport-Project.mp4" controls autoplay loop playsinline
         style="width: 100%; border-radius: 8px;"></video>
-      <div class="video-hotspot hidden" data-start="3.5" data-end="10.5" style="top: 17.5%; left: 15%;">
-        <div class="video-hotspot-popover right"><b>Control de Rutas:</b> Optimización de tiempos y costes.</div>
+      <!-- Hotspot 1: Filtros -->
+      <div class="video-hotspot hidden" data-start="3" data-end="12" style="top: 20%; left: 15%;">
+        <div class="video-hotspot-popover right"><b>Filtros Dinámicos:</b> Segmenta la información al instante con
+          filtros personalizables para obtener la vista exacta que necesitas.</div>
       </div>
-      <div class="video-hotspot hidden" data-start="10.6" data-end="20" style="top: 25%; left: 42.5%;">
-        <div class="video-hotspot-popover down"><b>Analítica Financiera:</b> KPIs de rentabilidad inmediata.</div>
+      <!-- Hotspot 2: Evolución -->
+      <div class="video-hotspot hidden" data-start="12" data-end="21" style="top: 15%; left: 65%;">
+        <div class="video-hotspot-popover down"><b>Patrones y Tendencias:</b> Analiza la evolución mensual de tu
+          operativa para identificar patrones y anticiparte a futuros cambios.</div>
+      </div>
+      <!-- Hotspot 3: KPIs -->
+      <div class="video-hotspot hidden" data-start="21" data-end="29" style="top: 65%; left: 25%;">
+        <div class="video-hotspot-popover right"><b>KPIs de Negocio:</b> Monitoriza los indicadores críticos para
+          entender de un vistazo cómo está funcionando cada área de tu empresa.</div>
+      </div>
+      <!-- Hotspot 4: Correcciones -->
+      <div class="video-hotspot hidden" data-start="29" data-end="38" style="top: 40%; left: 50%;">
+        <div class="video-hotspot-popover up"><b>Detección de Errores:</b> Identifica desviaciones y cuellos de botella
+          al momento para aplicar correcciones tácticas y optimizar resultados.</div>
+      </div>
+      <!-- Hotspot 5: Eficiencia -->
+      <div class="video-hotspot hidden" data-start="38" data-end="46" style="top: 75%; left: 70%;">
+        <div class="video-hotspot-popover left"><b>Eficiencia Operativa:</b> Sustituye informes manuales por un sistema
+          automatizado que garantiza la veracidad de cada dato.</div>
       </div>
     </div>
   </template>
@@ -771,8 +793,26 @@
     <div class="video-modal-container">
       <video id="rrhhVideo" src="Data/RRHH-Project.mp4" autoplay controls playsinline
         style="width: 100%; border-radius: 8px;"></video>
-      <div class="video-hotspot hidden" data-start="1" data-end="8" style="top: 15%; left: 30%;">
-        <div class="video-hotspot-popover right"><b>Talento:</b> Absentismo y rotación centralizada.</div>
+      <!-- Hotspot 1: Talento -->
+      <div class="video-hotspot hidden" data-start="1" data-end="8" style="top: 15%; left: 20%;">
+        <div class="video-hotspot-popover left"><b>Talento y Rotación:</b> Identifica patrones de absentismo y rotación
+          para mejorar el clima laboral y retener a tus mejores empleados.</div>
+      </div>
+      <!-- Hotspot 2: Estructura -->
+      <div class="video-hotspot hidden" data-start="9" data-end="16" style="top: 25%; left: 80%;">
+        <div class="video-hotspot-popover down"><b>Estructura Organizativa:</b> Análisis visual de la distribución de
+          plantilla por departamentos, sedes o áreas.</div>
+      </div>
+      <!-- Hotspot 3: Rendimiento -->
+      <div class="video-hotspot hidden" data-start="17" data-end="24" style="top: 35%; left: 35%;">
+        <div class="video-hotspot-popover right"><b>Fuga de Empleados:</b> Identifica qué cargos tienen
+          mayor riesgo de rotación.</div>
+      </div>
+      <!-- Hotspot 4: Costes -->
+      <div class="video-hotspot hidden" data-start="25" data-end="32" style="top: 60%; left: 55%;">
+        <div class="video-hotspot-popover right"><b>Impacto de la distancia:</b> Analiza cómo la ubicación geográfica
+          afecta a
+          la satisfacción y retención del personal.</div>
       </div>
     </div>
   </template>
@@ -781,6 +821,31 @@
     <div class="video-modal-container">
       <video id="cafeteriaVideo" src="Data/Cafeteria-Project.mp4" autoplay controls playsinline
         style="width: 100%; border-radius: 8px;"></video>
+      <!-- Hotspot 1: Ventas -->
+      <div class="video-hotspot hidden" data-start="2" data-end="12" style="top: 8%; left: 25%;">
+        <div class="video-hotspot-popover left"><b>Análisis de Ventas:</b> Control total de ingresos y comparativas
+          para medir el crecimiento real del negocio.</div>
+      </div>
+      <!-- Hotspot 2: Proveedores -->
+      <div class="video-hotspot hidden" data-start="12" data-end="21" style="top: 17%; left: 70%;">
+        <div class="video-hotspot-popover left"><b>Gestión de Proveedores:</b> Monitoriza el gasto por proveedor y
+          detecta variaciones de precios en materias primas.</div>
+      </div>
+      <!-- Hotspot 3: Rentabilidad -->
+      <div class="video-hotspot hidden" data-start="21" data-end="30" style="top: 45%; left: 70%;">
+        <div class="video-hotspot-popover right"><b>Rentabilidad por Producto:</b> Identifica tus productos estrella y
+          optimiza tu margen de beneficio por cada venta.</div>
+      </div>
+      <!-- Hotspot 4: Gastos -->
+      <div class="video-hotspot hidden" data-start="30" data-end="39" style="top: 45%; left: 47%;">
+        <div class="video-hotspot-popover up"><b>Control de Gastos:</b> Visibilidad completa sobre costes operativos
+          para maximizar el beneficio neto mensual.</div>
+      </div>
+      <!-- Hotspot 5: Stock -->
+      <div class="video-hotspot hidden" data-start="39" data-end="47" style="top: 80%; left: 25%;">
+        <div class="video-hotspot-popover left"><b>Tendencias de Ingresos:</b> Identifica los días de mayor facturación
+          y detecta patrones de consumo para anticiparte a la demanda.</div>
+      </div>
     </div>
   </template>
 

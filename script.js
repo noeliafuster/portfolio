@@ -238,6 +238,8 @@
   /* ── FORMULARIO DE CONTACTO ────────────────────────────── */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
+  const contactFormContent = document.getElementById('contactFormContent');
+  const resetFormBtn = document.getElementById('resetFormBtn');
 
   if (contactForm && formSuccess) {
     contactForm.addEventListener('submit', async (e) => {
@@ -263,10 +265,11 @@
         });
 
         if (response.ok) {
-          contactForm.style.display = 'none';
+          if (contactFormContent) contactFormContent.style.display = 'none';
           formSuccess.hidden = false;
           formSuccess.style.display = 'flex'; // Aseguramos que se vea
           formSuccess.focus();
+          contactForm.reset();
         } else {
           alert('Ups! Hubo un problema con el envío. Por favor, inténtalo de nuevo o contacta directamente por WhatsApp.');
           btn.innerHTML = originalBtnContent;
@@ -280,6 +283,26 @@
         btn.style.opacity = '1';
       }
     });
+
+    if (resetFormBtn) {
+      resetFormBtn.addEventListener('click', () => {
+        formSuccess.hidden = true;
+        formSuccess.style.display = 'none';
+        if (contactFormContent) contactFormContent.style.display = 'flex';
+        
+        const btn = contactForm.querySelector('.btn-submit');
+        if (btn) {
+          btn.innerHTML = `
+            Enviar mensaje
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
+            </svg>
+          `;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      });
+    }
   }
 
   /* ── SMOOTH SCROLL PARA ANCLAS ─────────────────────────── */
@@ -572,6 +595,7 @@
     if (!tmpl) return;
     container.appendChild(tmpl.content.cloneNode(true));
     const video = container.querySelector('video');
+    if (video) video.volume = 0.25;
     const hotspots = container.querySelectorAll('.video-hotspot');
     if (video) {
       video.addEventListener('timeupdate', () => {
@@ -587,7 +611,20 @@
 
   function renderCafeteriaVideo(container) {
     const tmpl = document.getElementById('tmpl-cafeteria-video');
-    if (tmpl) container.appendChild(tmpl.content.cloneNode(true));
+    if (!tmpl) return;
+    container.appendChild(tmpl.content.cloneNode(true));
+    const video = container.querySelector('video');
+    const hotspots = container.querySelectorAll('.video-hotspot');
+    if (video) {
+      video.addEventListener('timeupdate', () => {
+        const curr = video.currentTime;
+        hotspots.forEach(hs => {
+          const s = parseFloat(hs.dataset.start);
+          const e = parseFloat(hs.dataset.end);
+          hs.classList.toggle('hidden', !(curr >= s && curr <= e));
+        });
+      });
+    }
   }
 
   function renderGenericImage(container, src) {
