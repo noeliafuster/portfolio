@@ -642,23 +642,23 @@
     if (tmpl) container.appendChild(tmpl.content.cloneNode(true));
   }
 
-  /* ── LÓGICA DE COOKIES ─────────────────────────────────── */
-  const cookieBanner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('accept-cookies');
-  const rejectBtn = document.getElementById('reject-cookies');
+  /* ── LÓGICA DE PRIVACIDAD ─────────────────────────────────── */
+  const pNotice = document.getElementById('p-notice');
+  const acceptBtn = document.getElementById('accept-p-notice');
+  const rejectBtn = document.getElementById('reject-p-notice');
 
-  if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+  if (pNotice && !localStorage.getItem('privacyConsent')) {
     setTimeout(() => {
-      cookieBanner.classList.add('show');
+      pNotice.classList.add('show');
     }, 1500); // 1.5s delay
   }
 
-  const hideBanner = (status) => {
-    localStorage.setItem('cookieConsent', status);
-    cookieBanner.classList.remove('show');
+  const hideNotice = (status) => {
+    localStorage.setItem('privacyConsent', status);
+    pNotice.classList.remove('show');
   };
 
-  if (acceptBtn) acceptBtn.addEventListener('click', () => hideBanner('accepted'));
-  if (rejectBtn) rejectBtn.addEventListener('click', () => hideBanner('rejected'));
+  if (acceptBtn) acceptBtn.addEventListener('click', () => hideNotice('accepted'));
+  if (rejectBtn) rejectBtn.addEventListener('click', () => hideNotice('rejected'));
 
 })();
