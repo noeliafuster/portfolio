@@ -2549,7 +2549,7 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
 
 /* â”€â”€ CONTACTO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .contact-section {
-  padding: 120px 0;
+  padding: 100px 0 40px 0;
   background: var(--surf-1);
   border-top: 1px solid var(--border);
 }
@@ -3326,14 +3326,18 @@ video {
   padding: 24px;
   z-index: 9999;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  transform: translateY(150%);
+  transform: translateY(30px);
   opacity: 0;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, visibility 0.6s;
 }
 
 .p-notice.show {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .p-notice-title {
