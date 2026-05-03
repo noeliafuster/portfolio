@@ -1283,10 +1283,10 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--t3);
+  color: var(--t1);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .logos-grid {
@@ -1435,7 +1435,7 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   text-align: center;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--t4);
+  color: var(--t1);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 48px;

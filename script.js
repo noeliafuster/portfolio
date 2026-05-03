@@ -465,6 +465,7 @@
   const modalTitles = {
     'mkt-bombon':     'Campaña Performance — Bombón de Limón',
     'mkt-espinosa':   'Estrategia Visual — Espinosa Pastelería',
+    'mkt-estetica':   'Estrategia Visual — Centro de Estética',
     'mkt-cafeteria':  'Estrategia Visual — Espinosa Pastelería',
     'data-transport': 'Dashboard BI — Empresa de Transporte',
     'data-rrhh':      'Dashboard RRHH — Empresa Industrial',
@@ -485,6 +486,7 @@
     // Mapeo de renderers
     if (id === 'mkt-bombon') renderGenericImage(modalBody, 'Marketing/BombonDeLimon.png');
     else if (id === 'mkt-espinosa') renderGenericImage(modalBody, 'Marketing/EspinosaFeed.jpg');
+    else if (id === 'mkt-estetica') renderGenericImage(modalBody, 'Marketing/FEED ESTETICA.svg');
     else if (id === 'data-transport') renderTransportVideo(modalBody);
     else if (id === 'data-rrhh') renderRRHHVideo(modalBody);
     else if (id === 'web-dentista') {

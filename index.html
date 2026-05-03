@@ -289,9 +289,11 @@
   <link rel="preload" href="logo.svg" as="image">
 
   <!-- ═══ FUENTES ═══ -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
+  </noscript>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -332,7 +334,7 @@
         <span></span><span></span>
       </button>
     </nav>
-    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <div class="nav-mobile" id="navMobile" aria-hidden="false">
       <ul role="list">
         <li><a href="#servicios" class="mobile-link">Servicios</a></li>
         <li><a href="#sobre-mi" class="mobile-link">Sobre mí</a></li>
@@ -370,9 +372,9 @@
           <div class="hero-trust fade-up">
             <span class="trust-label">Trabajando con</span>
             <div class="trust-logos">
-              <img src="Empresas_trabajadas/Tulip_Optimized.png" alt="Tulip Consulting" loading="lazy">
-              <img src="Empresas_trabajadas/Aranguen Logo.png" alt="Aranguren" loading="lazy">
-              <img src="Empresas_trabajadas/logo-casajuana-OK-png.png" alt="Casajuana" loading="lazy">
+              <img src="Empresas_trabajadas/Tulip_Optimized.png" alt="Tulip Consulting" fetchpriority="high">
+              <img src="Empresas_trabajadas/Aranguen Logo.png" alt="Aranguren" fetchpriority="high">
+              <img src="Empresas_trabajadas/logo-casajuana-OK-png.png" alt="Casajuana" fetchpriority="high">
             </div>
           </div>
         </div>
@@ -688,18 +690,18 @@
             </p>
             <div class="about-pillars fade-up">
               <div class="pillar">
-                <h4>Rigor de datos</h4>
+                <h3>Rigor de datos</h3>
                 <p>Me apoyo puramente en el análisis cuantitativo para no dejar nada al azar. Las corazonadas están
                   bien,
                   pero prefiero tomar decisiones basadas en datos reales.</p>
               </div>
               <div class="pillar">
-                <h4>Visión de negocio</h4>
+                <h3>Visión de negocio</h3>
                 <p>El marketing y las acciones de 'postureo' no va conmigo. Si una acción no trae rentabilidad real a tu
                   negocio, simplemente no la hacemos.</p>
               </div>
               <div class="pillar">
-                <h4>Arquitecta de sistemas</h4>
+                <h3>Arquitecta de sistemas</h3>
                 <p>Construyo sistemas que hacen el trabajo pesado en piloto automático. Así te liberas del día a día y
                   puedes dedicar tu tiempo a lo que de verdad hace avanzar tu negocio.</p>
               </div>
@@ -769,6 +771,22 @@
                 <div class="cs-tags"><span>Fotografía</span><span>Social Media</span><span>Local SEO</span></div>
                 <div class="cs-visual" data-video="mkt-espinosa">
                   <img src="Marketing/EspinosaFeed.jpg" alt="Feed Espinosa Pastelería" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide is-vertical" data-tab="marketing"
+              style="--cs-accent:linear-gradient(135deg,#ec4899,#8b5cf6)">
+              <div class="carousel-slide-inner">
+                <div class="cs-meta">
+                  <span class="cs-cat" style="color:#ec4899">Marketing</span>
+                  <span class="cs-year">2024</span>
+                </div>
+                <h3 class="cs-title">Estrategia Visual — Centro de Estética</h3>
+                <p class="cs-desc">Identidad visual premium diseñada para transmitir exclusividad y confianza, atrayendo a clientes de alto valor adquisitivo y aumentando la recurrencia.</p>
+                <div class="cs-tags"><span>Diseño</span><span>Social Media</span><span>Branding</span></div>
+                <div class="cs-visual" data-video="mkt-estetica">
+                  <img src="Marketing/FEED ESTETICA.svg" alt="Feed Estética" loading="lazy">
                 </div>
               </div>
             </div>
@@ -1149,7 +1167,7 @@
     </div>
   </template>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
   <a href="https://wa.me/34684789507" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
     aria-label="Contactar por WhatsApp">
