@@ -287,7 +287,7 @@ textarea {
   animation: orbFloat5 26s ease-in-out infinite alternate;
 }
 
-body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoModal) {
+body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoModal):not(#p-notice):not(.whatsapp-float) {
   position: relative;
   z-index: 1;
 }
@@ -3365,7 +3365,7 @@ video {
     bottom: 16px;
     left: 16px;
     right: 16px;
-    max-width: auto;
+    max-width: none;
     border-radius: var(--r-md);
   }
 }
