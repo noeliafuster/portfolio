@@ -159,23 +159,59 @@
     kpiVals.forEach(el => kpiObs.observe(el));
   }
 
-  /* ── MANIFIESTO — WORD REVEAL ──────────────────────────── */
-  const manifestoText = document.getElementById('manifestoText');
-  if (manifestoText && 'IntersectionObserver' in window) {
-    const words = manifestoText.textContent.trim().split(/\s+/);
-    manifestoText.innerHTML = words
-      .map((w, i) => '<span class="word" style="transition-delay:' + (i * 0.04) + 's">' + w + '</span>')
-      .join(' ');
+  /* ── MANIFIESTO — ROTATING TYPEWRITER ────────────────────── */
+  const manifestoRotate = document.getElementById('manifestoRotate');
+  if (manifestoRotate && 'IntersectionObserver' in window) {
+    const phrases = [
+      'que tengas que estar encima de cada detalle.',
+      'que todo dependa de tu tiempo y energía.',
+      'que te obliguen a apagar fuegos constantemente.',
+      'que el crecimiento signifique más carga operativa.',
+      'que te sientas atrapado en el día a día del negocio.'
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let started = false;
+    const typeSpeed = 45;
+    const deleteSpeed = 25;
+    const pauseAfterType = 2400;
+    const pauseAfterDelete = 400;
 
-    const manifestoObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.word').forEach(w => w.classList.add('show'));
+    function typeEffect() {
+      const current = phrases[phraseIndex];
+      if (!isDeleting) {
+        manifestoRotate.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          setTimeout(function () { isDeleting = true; typeEffect(); }, pauseAfterType);
+          return;
+        }
+        setTimeout(typeEffect, typeSpeed);
+      } else {
+        manifestoRotate.textContent = current.substring(0, charIndex);
+        charIndex--;
+        if (charIndex < 0) {
+          isDeleting = false;
+          charIndex = 0;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeEffect, pauseAfterDelete);
+          return;
+        }
+        setTimeout(typeEffect, deleteSpeed);
+      }
+    }
+
+    const manifestoObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          typeEffect();
           manifestoObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.3 });
-    manifestoObs.observe(manifestoText);
+    manifestoObs.observe(manifestoRotate);
   }
 
   /* ── EFECTO MAGNÉTICO EN BOTONES ───────────────────────── */

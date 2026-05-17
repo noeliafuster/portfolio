@@ -1506,16 +1506,25 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   margin-bottom: 24px;
 }
 
-.manifesto-text .word {
-  opacity: 0;
-  transform: translateY(12px);
-  display: inline-block;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.manifesto-rotate {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
-.manifesto-text .word.show {
-  opacity: 1;
-  transform: translateY(0);
+.manifesto-cursor {
+  display: inline-block;
+  color: var(--a);
+  font-weight: 300;
+  animation: blink-cursor 0.75s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .manifesto-sig {
