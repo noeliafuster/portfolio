@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGS564ZRFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CGS564ZRFT');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MRWTKW25');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Publicaciones Científicas — Noelia Fuster | IA, Machine Learning y Analítica de Datos</title>
+  <meta name="description"
+    content="Explora las publicaciones científicas de Noelia Fuster sobre Inteligencia Artificial, Machine Learning, logística y analítica de datos. Más de 410 citas en los últimos 3 años.">
+  <meta name="keywords"
+    content="publicaciones científicas IA, papers machine learning, investigación analítica datos, Noelia Fuster publicaciones, inteligencia artificial logística, optimización supply chain">
+  <meta name="author" content="Noelia Fuster">
+  <meta name="robots" content="index, follow">
+
+  <!-- ═══ URL CANÓNICA ═══ -->
+  <link rel="canonical" href="https://noeliafuster.com/publicaciones.html">
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:title" content="Publicaciones Científicas — Noelia Fuster">
+  <meta property="og:description"
+    content="Investigaciones en IA, Machine Learning y Analítica de Datos. +410 citas académicas en los últimos 3 años.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://noeliafuster.com/publicaciones.html">
+  <meta property="og:image" content="https://noeliafuster.com/assets/og-image.png">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo negro.png">
+
+  <!-- ═══ PRELOAD ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="logo.svg" as="image">
+
+  <!-- ═══ FUENTES ═══ -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ═══ PUBLICACIONES — PAGE-SPECIFIC STYLES ═══ */
+
+    /* Hero de la página */
+    .pub-hero {
+      padding: calc(var(--nav-h) + 80px) 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pub-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .pub-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pub-hero .eyebrow {
+      justify-content: center;
+    }
+
+    .pub-hero .section-title {
+      margin-bottom: 20px;
+    }
+
+    .pub-hero-desc {
+      font-size: 1.05rem;
+      color: var(--t2);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }
+
+    /* Stats strip */
+    .pub-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .pub-stat {
+      text-align: center;
+    }
+
+    .pub-stat-num {
+      font-family: var(--font-mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .pub-stat-label {
+      font-size: 0.78rem;
+      color: var(--t3);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* Divider */
+    .pub-divider {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .pub-divider hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Publications grid */
+    .pub-section {
+      padding: 60px 0 120px;
+    }
+
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 28px;
+    }
+
+    /* Individual card */
+    .pub-card {
+      background: var(--surf-1);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.35s ease, transform 0.35s var(--ease), box-shadow 0.35s ease;
+    }
+
+    .pub-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--grad3);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .pub-card:hover {
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(139, 92, 246, 0.08);
+    }
+
+    .pub-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Card header with number badge */
+    .pub-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .pub-number {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(139, 92, 246, 0.14), rgba(59, 130, 246, 0.10));
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--a);
+    }
+
+    .pub-category {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--a);
+      opacity: 0.8;
+    }
+
+    /* Card title */
+    .pub-title {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--t1);
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    /* Card description */
+    .pub-desc {
+      font-size: 0.88rem;
+      color: var(--t3);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    /* Tag pills */
+    .pub-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .pub-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    .pub-tag--violet {
+      color: rgba(139, 92, 246, 0.9);
+      border: 1px solid rgba(139, 92, 246, 0.22);
+      background: rgba(139, 92, 246, 0.08);
+    }
+
+    .pub-tag--blue {
+      color: rgba(59, 130, 246, 0.9);
+      border: 1px solid rgba(59, 130, 246, 0.22);
+      background: rgba(59, 130, 246, 0.08);
+    }
+
+    .pub-tag--green {
+      color: rgba(16, 185, 129, 0.9);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    /* CTA button */
+    .pub-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: transparent;
+      border: 1px solid var(--border-2);
+      color: var(--t2);
+      font-family: var(--font-head);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: 100px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    .pub-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .pub-cta:hover {
+      background: var(--grad);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .pub-cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Back link */
+    .pub-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--t3);
+      transition: color 0.2s ease;
+      margin-top: 40px;
+    }
+
+    .pub-back svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .pub-back:hover {
+      color: var(--a);
+    }
+
+    .pub-back:hover svg {
+      transform: translateX(-4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .pub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-stats {
+        gap: 28px;
+      }
+
+      .pub-stat-num {
+        font-size: 1.7rem;
+      }
+
+      .pub-hero {
+        padding-top: calc(var(--nav-h) + 50px);
+        padding-bottom: 40px;
+      }
+
+      .pub-card {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pub-stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRWTKW25" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Orbes de fondo -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-orb bg-orb-4"></div>
+    <div class="bg-orb bg-orb-5"></div>
+  </div>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══ NAVEGACIÓN ═══ -->
+  <header class="nav-header" id="navHeader">
+    <nav class="nav-inner" aria-label="Navegación principal">
+      <a href="index.html" class="nav-logo" aria-label="Noelia Fuster — inicio">
+        <img src="logo.svg" alt="NF" width="38" height="38" class="nav-logo-img">
+        <span class="nav-logo-text">Noelia Fuster</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
+        <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="index.html#proceso" class="nav-link">Proceso</a></li>
+        <li><a href="publicaciones.html" class="nav-link active">Publicaciones</a></li>
+      </ul>
+      <a href="index.html#contacto" class="nav-cta" data-magnetic>Hablemos</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="navMobile" aria-hidden="false">
+      <ul role="list">
+        <li><a href="index.html#servicios" class="mobile-link">Servicios</a></li>
+        <li><a href="index.html#sobre-mi" class="mobile-link">Sobre mí</a></li>
+        <li><a href="index.html#proyectos" class="mobile-link">Proyectos</a></li>
+        <li><a href="index.html#proceso" class="mobile-link">Proceso</a></li>
+        <li><a href="publicaciones.html" class="mobile-link">Publicaciones</a></li>
+        <li><a href="index.html#contacto" class="mobile-link mobile-link-cta">Hablemos →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ HERO PUBLICACIONES ═══ -->
+    <section class="pub-hero">
+      <div class="container">
+        <span class="eyebrow fade-up">Investigación Académica</span>
+        <h1 class="section-title fade-up">Publicaciones<br><em>Científicas</em></h1>
+        <p class="pub-hero-desc fade-up">
+          Cada artículo es el resultado de aplicar inteligencia artificial, optimización y analítica de datos a
+          problemas reales en logística, salud, energía y educación.
+          Cada publicación nace de una pregunta concreta: ¿cómo convertir datos en decisiones más inteligentes?
+        </p>
+        <div class="pub-stats fade-up">
+          <div class="pub-stat">
+            <div class="pub-stat-num">8+</div>
+            <div class="pub-stat-label">Publicaciones</div>
+          </div>
+          <div class="pub-stat">
+            <div class="pub-stat-num">410+</div>
+            <div class="pub-stat-label">Citas académicas</div>
+          </div>
+          <div class="pub-stat">
+            <div class="pub-stat-num">3+</div>
+            <div class="pub-stat-label">Años de investigación</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="pub-divider">
+      <hr>
+    </div>
+
+    <!-- ═══ GRID PUBLICACIONES ═══ -->
+    <section class="pub-section">
+      <div class="container">
+        <div class="pub-grid">
+
+          <!-- Publicación 1 -->
+          <article class="pub-card fade-up" id="pub-1">
+            <div class="pub-card-header">
+              <div class="pub-number">01</div>
+              <span class="pub-category">Logística · IA</span>
+            </div>
+            <h2 class="pub-title">Artificial Intelligence in Logistics Optimization with Sustainable Criteria: A Review
+            </h2>
+            <p class="pub-desc">Revisión exhaustiva de cómo la Inteligencia Artificial está transformando la
+              optimización logística incorporando criterios de sostenibilidad ambiental y eficiencia operativa.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">Inteligencia Artificial</span>
+              <span class="pub-tag pub-tag--blue">Logística</span>
+              <span class="pub-tag pub-tag--green">Sostenibilidad</span>
+            </div>
+            <a href="assets/pdfs/Artificial Intelligence in Logistics Optimization with Sustainable Criteria A Review.pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Publicación 2 -->
+          <article class="pub-card fade-up" id="pub-2">
+            <div class="pub-card-header">
+              <div class="pub-number">02</div>
+              <span class="pub-category">Supply Chain · Heurística</span>
+            </div>
+            <h2 class="pub-title">Automation in Inventory Redistribution within a Hybrid Supply Chain with Reverse
+              Logistics</h2>
+            <p class="pub-desc">Enfoque heurístico basado en reglas de negocio para automatizar la redistribución de
+              inventario en cadenas de suministro híbridas con logística inversa.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">Automatización</span>
+              <span class="pub-tag pub-tag--blue">Supply Chain</span>
+              <span class="pub-tag pub-tag--green">Heurística</span>
+            </div>
+            <a href="assets/pdfs/Automation_in_Inventory_Redistribution_within_a_Hybrid_Supply_Chain_with_Reverse_Logistics_A_Heuristic_Approach_Based_on_Business_Rules.pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Publicación 3 -->
+          <article class="pub-card fade-up" id="pub-3">
+            <div class="pub-card-header">
+              <div class="pub-number">03</div>
+              <span class="pub-category">Machine Learning · Seguros</span>
+            </div>
+            <h2 class="pub-title">Balancing Risk and Profit: Predicting the Performance of Potential New Customers in
+              the Insurance Industry</h2>
+            <p class="pub-desc">Aplicación de modelos predictivos de Machine Learning para equilibrar riesgo y
+              rentabilidad en la captación de nuevos clientes del sector asegurador.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">Machine Learning</span>
+              <span class="pub-tag pub-tag--blue">Predicción</span>
+              <span class="pub-tag pub-tag--green">Seguros</span>
+            </div>
+            <a href="assets/pdfs/Balancing Risk and Profit Predicting the Performance of Potential New Customers in the Insurance Industry.pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Publicación 4 -->
+          <article class="pub-card fade-up" id="pub-4">
+            <div class="pub-card-header">
+              <div class="pub-number">04</div>
+              <span class="pub-category">Educación · IA</span>
+            </div>
+            <h2 class="pub-title">Enhancing Accessibility to Analytics Courses in Higher Education through AI,
+              Simulation, and e-Collaborative Tools</h2>
+            <p class="pub-desc">Investigación sobre cómo la IA, las simulaciones y las herramientas colaborativas pueden
+              democratizar el acceso a la formación en analítica de datos en la educación superior.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">IA en Educación</span>
+              <span class="pub-tag pub-tag--blue">Simulación</span>
+              <span class="pub-tag pub-tag--green">e-Learning</span>
+            </div>
+            <a href="assets/pdfs/Enhancing Accessibility to Analytics Courses in Higher Education through AI, Simulation, and e-Collaborative Tools.pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Publicación 5 -->
+          <article class="pub-card fade-up" id="pub-5">
+            <div class="pub-card-header">
+              <div class="pub-number">05</div>
+              <span class="pub-category">Optimización · Routing</span>
+            </div>
+            <h2 class="pub-title">Optimizing Multi-Depot Vehicle Routing Under Dynamic Demand Conditions Using a
+              Learnheuristic Approach</h2>
+            <p class="pub-desc">Propuesta de un enfoque learnheurístico para la optimización del ruteo de vehículos con
+              múltiples depósitos en escenarios de demanda dinámica e incertidumbre.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">Learnheurística</span>
+              <span class="pub-tag pub-tag--blue">Vehicle Routing</span>
+              <span class="pub-tag pub-tag--green">Optimización</span>
+            </div>
+            <a href="assets/pdfs/Optimizing_Multi-Depot_Vehicle_Routing_Under_Dynamic_Demand_Conditions_Using_a_Learnheuristic_Approach (1).pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Publicación 6 -->
+          <article class="pub-card fade-up" id="pub-6">
+            <div class="pub-card-header">
+              <div class="pub-number">06</div>
+              <span class="pub-category">Energía · Smart Cities</span>
+            </div>
+            <h2 class="pub-title">Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key
+              Performance Indicators and Data Analytics</h2>
+            <p class="pub-desc">Uso de KPIs y analítica de datos para promover la eficiencia energética y la reducción
+              de emisiones en entornos urbanos, contribuyendo al desarrollo de ciudades inteligentes.</p>
+            <div class="pub-tags">
+              <span class="pub-tag pub-tag--violet">Data Analytics</span>
+              <span class="pub-tag pub-tag--blue">Eficiencia Energética</span>
+              <span class="pub-tag pub-tag--green">Smart Cities</span>
+            </div>
+            <a href="assets/pdfs/Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key Performance Indicators and Data Analytics.pdf"
+              target="_blank" rel="noopener" class="pub-cta">
+              Leer publicación
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- Back to home -->
+        <a href="index.html" class="pub-back fade-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M19 12H5" />
+            <path d="m12 19-7-7 7-7" />
+          </svg>
+          Volver al inicio
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo">
+        <img src="logo.svg" alt="Noelia Fuster" width="28" height="28">
+        <span>Noelia Fuster</span>
+      </a>
+      <p class="footer-copy">© 2026 Noelia Fuster. Todos los derechos reservados.</p>
+      <a href="#" class="back-top" aria-label="Volver arriba">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+  <a href="https://wa.me/34684789507" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+    </svg>
+  </a>
+</body>
+
+</html>
