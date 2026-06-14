@@ -362,12 +362,13 @@
   <main>
     <!-- ═══ HERO ═══ -->
     <section class="hero" id="inicio">
+      <canvas id="heroShader" aria-hidden="true"></canvas>
       <div class="hero-grid">
 
         <div class="hero-text">
           <div class="hero-badge fade-up">
             <span class="pulse-dot"></span>
-            Disponible · 2 plazas libres este mes
+            Disponible · 1 plaza libre este mes
           </div>
           <h1 class="hero-headline fade-up">
             ESCALO TU NEGOCIO<br>
@@ -684,7 +685,9 @@
             <p class="about-body fade-up">
               Me apasiona ayudar a las empresas a dejar atrás el “modo manual” y encontrar formas más inteligentes de
               trabajar.
-              Mi experiencia en investigación —con más de <a href="publicaciones.html" style="color: var(--a); text-decoration: underline; text-underline-offset: 3px;">8 publicaciones científicas</a> sobre IA, machine learning y
+              Mi experiencia en investigación —con más de <a href="publicaciones.html"
+                style="color: var(--a); text-decoration: underline; text-underline-offset: 3px;">8 publicaciones
+                científicas</a> sobre IA, machine learning y
               analítica de
               datos, y 410 citas en
               los últimos 3 años— me ha enseñado algo muy simple: la innovación solo tiene valor cuando resuelve
@@ -852,7 +855,7 @@
               </div>
             </div>
 
-            <div class="carousel-slide" data-tab="data" style="--cs-accent:linear-gradient(135deg,#10b981,#3b82f6)">
+            <div class="carousel-slide" data-tab="datos" style="--cs-accent:linear-gradient(135deg,#10b981,#3b82f6)">
               <div class="carousel-slide-inner">
                 <div class="cs-meta">
                   <span class="cs-cat" style="color:#10b981">Data / BI</span>
@@ -865,6 +868,24 @@
                 </div>
                 <div class="cs-visual" data-video="data-cafeteria">
                   <video src="Data/Cafeteria-Project.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-tab="auto" style="--cs-accent:linear-gradient(135deg,#a855f7,#6366f1)">
+              <div class="carousel-slide-inner">
+                <div class="cs-meta">
+                  <span class="cs-cat" style="color:#a855f7">Automatización</span>
+                  <span class="cs-year">2024</span>
+                </div>
+                <h3 class="cs-title">Sistema ERP Personalizado — Power Apps</h3>
+                <p class="cs-desc">Digitalización y automatización de la gestión interna: control de stock, pedidos
+                  y facturación en tiempo real para optimizar la toma de decisiones.</p>
+                <div class="cs-tags"><span>Power
+                    Apps</span><span>Automatización</span><span>ERP</span><span>Procesos</span></div>
+                <div class="cs-visual" data-video="auto-erp">
+                  <video src="Automatizacion/ERP-Powerapp.mp4" autoplay loop muted playsinline
+                    aria-hidden="true"></video>
                 </div>
               </div>
             </div>
@@ -1161,6 +1182,13 @@
         <div class="video-hotspot-popover left"><b>Tendencias de Ingresos:</b> Identifica los días de mayor facturación
           y detecta patrones de consumo para anticiparte a la demanda.</div>
       </div>
+    </div>
+  </template>
+
+  <template id="tmpl-erp-video">
+    <div class="video-modal-container">
+      <video id="erpVideo" src="Automatizacion/ERP-Powerapp.mp4" autoplay controls playsinline
+        style="width: 100%; border-radius: 8px;"></video>
     </div>
   </template>
 

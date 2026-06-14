@@ -761,6 +761,31 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   position: relative;
 }
 
+/* ── HERO SHADER CANVAS ────────────────────────────────── */
+#heroShader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  display: block;
+}
+
+#heroShader.is-visible {
+  opacity: 0.65;
+}
+
+/* Ensure hero content stays on top of canvas */
+.hero > *:not(#heroShader) {
+  position: relative;
+  z-index: 1;
+}
+
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
