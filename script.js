@@ -506,6 +506,7 @@
     'data-transport': 'Dashboard BI — Empresa de Transporte',
     'data-rrhh':      'Dashboard RRHH — Empresa Industrial',
     'web-dentista':   'Rediseño Web — Clínica Dental',
+    'web-azketum':    'Desarrollo Web — Azketum',
     'data-cafeteria': 'Business Intelligence — Origen Café Artesanal',
     'auto-erp':       'Sistema ERP Personalizado — Power Apps'
   };
@@ -529,6 +530,10 @@
     else if (id === 'web-dentista') {
       modal.classList.add('is-large');
       renderDentistaVideo(modalBody);
+    }
+    else if (id === 'web-azketum') {
+      modal.classList.add('is-large');
+      renderGenericVideo(modalBody, 'Desarrollo_web/Pagweb azketum.mp4');
     }
     else if (id === 'data-cafeteria') renderCafeteriaVideo(modalBody);
     else if (id === 'auto-erp') renderERPVideo(modalBody);
@@ -678,6 +683,14 @@
   function renderDentistaVideo(container) {
     const tmpl = document.getElementById('tmpl-dentista-video');
     if (tmpl) container.appendChild(tmpl.content.cloneNode(true));
+  }
+
+  function renderGenericVideo(container, src) {
+    container.innerHTML = `
+      <div class="video-modal-container">
+        <video src="${src}" controls autoplay loop playsinline style="width: 100%; border-radius: 8px;"></video>
+      </div>
+    `;
   }
 
   function renderERPVideo(container) {
