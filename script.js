@@ -6,6 +6,37 @@
 (function () {
   'use strict';
 
+  /* ── THEME TOGGLE (DARK / LIGHT) ──────────────────────── */
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+
+  // Determine initial theme: localStorage > system preference > dark
+  function getInitialTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+    return 'dark';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      htmlEl.setAttribute('data-theme', 'light');
+    } else {
+      htmlEl.removeAttribute('data-theme');
+    }
+  }
+
+  applyTheme(getInitialTheme());
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      const current = htmlEl.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
   /* ── CURSOR PERSONALIZADO ──────────────────────────────── */
   const cursor     = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
