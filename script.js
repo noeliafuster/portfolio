@@ -839,10 +839,13 @@
         lines += line * lineColor * rand;
       }
 
-      vec4 fragColor = mix(bgColor1, bgColor2, uv.x);
-      fragColor *= verticalFade;
-      fragColor.a = 1.0;
-      fragColor += lines;
+      vec4 fragColor = vec4(0.0);
+      
+      // Calculate max line intensity to set the alpha
+      float maxIntensity = max(max(lines.r, lines.g), lines.b);
+      
+      fragColor.rgb = lines.rgb;
+      fragColor.a = maxIntensity; // Transparent background where there are no lines
 
       gl_FragColor = fragColor;
     }
