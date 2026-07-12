@@ -10,12 +10,12 @@
   const themeToggle = document.getElementById('themeToggle');
   const htmlEl = document.documentElement;
 
-  // Determine initial theme: localStorage > system preference > dark
+  // Determine initial theme: localStorage > system preference > light
   function getInitialTheme() {
     const saved = localStorage.getItem('theme');
     if (saved) return saved;
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
-    return 'dark';
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    return 'light';
   }
 
   function applyTheme(theme) {
