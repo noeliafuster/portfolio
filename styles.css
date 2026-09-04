@@ -454,49 +454,6 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   z-index: 1;
 }
 
-/* ── ORBES — OPTIMIZACIÓN MÓVIL ──────────────────────────────────────
-   En móvil la GPU tiene limitaciones serias con filter:blur() grande.
-   Reducimos tamaño a ~50%, blur a 40-50px y ocultamos los orbes 3,4,5.
-   Esto elimina ~10s de Main Thread bloqueado → +15 pts Performance.
-   ─────────────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .bg-orb-1 {
-    width: 600px;
-    height: 600px;
-    top: -100px;
-    right: -80px;
-    filter: blur(50px);
-    animation-duration: 30s;
-  }
-
-  .bg-orb-2 {
-    width: 500px;
-    height: 500px;
-    bottom: -80px;
-    left: -60px;
-    filter: blur(50px);
-    animation-duration: 35s;
-  }
-
-  /* Orbes 3, 4 y 5 se ocultan completamente en móvil */
-  .bg-orb-3,
-  .bg-orb-4,
-  .bg-orb-5 {
-    display: none;
-  }
-}
-
-/* ── PREFERS-REDUCED-MOTION — accesibilidad + rendimiento ────────────
-   Usuarios que han activado "Reducir movimiento" en su sistema:
-   paramos todas las animaciones de los orbes. Google también puntúa
-   el respeto a esta preferencia como buena práctica.
-   ─────────────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .bg-orb {
-    animation: none !important;
-  }
-}
-
 /* â”€â”€ CURSOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cursor,
 .cursor-ring {
