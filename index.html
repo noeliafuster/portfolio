@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 
 <head>
-  <!-- Analytics & GTM (Carga diferida al hacer scroll para optimizar rendimiento) -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGS564ZRFT"></script>
   <script>
-    let analyticsLoaded = false;
-    function loadAnalytics() {
-      if (analyticsLoaded) return;
-      analyticsLoaded = true;
-      
-      // gtag.js
-      const gtagScript = document.createElement('script');
-      gtagScript.async = true;
-      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-CGS564ZRFT';
-      document.head.appendChild(gtagScript);
-      
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-CGS564ZRFT');
-      
-      // GTM
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-MRWTKW25');
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    window.addEventListener('scroll', loadAnalytics, { once: true, passive: true });
-    window.addEventListener('mousemove', loadAnalytics, { once: true, passive: true });
-    window.addEventListener('touchstart', loadAnalytics, { once: true, passive: true });
-    setTimeout(loadAnalytics, 5000); // Respaldo por si no hay interacciÃ³n
+    gtag('config', 'G-CGS564ZRFT');
   </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MRWTKW25');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -108,7 +95,7 @@
       "@type": "Person",
       "name": "Noelia Fuster",
       "jobTitle": "Consultora de Transformación Digital",
-      "description": "Investigadora en IA con +8 papers publicados y 505 citas. Formación en ADE e Ingeniería Computacional. Especialista en automatización, Business Intelligence y marketing digital.",
+      "description": "Investigadora en IA con +8 papers publicados y 372 citas. Formación en ADE e Ingeniería Computacional. Especialista en automatización, Business Intelligence y marketing digital.",
       "url": "https://noeliafuster.com",
       "image": "https://noeliafuster.com/Noelia - Foto.jpg",
       "alumniOf": [
@@ -497,9 +484,6 @@
         <img src="Empresas_trabajadas/UPV.png" alt="UPV" loading="lazy">
         <img src="Empresas_trabajadas/Tulip_Optimized.png" alt="Tulip Consulting" loading="lazy">
         <img src="Empresas_trabajadas/Aranguen Logo.png" alt="Aranguren" loading="lazy">
-        <img src="Empresas_trabajadas/logo_transportes_Asensi.png" alt="Transportes Asensi" loading="lazy">
-        <img src="Empresas_trabajadas/logo_baquerodental.png" alt="Baquero Dental" loading="lazy">
-        <img src="Empresas_trabajadas/logo_gonzalez_baquero.png" alt="González Baquero" loading="lazy">
       </div>
     </section>
 
@@ -709,7 +693,7 @@
                 style="color: var(--a); text-decoration: underline; text-underline-offset: 3px;">8 publicaciones
                 científicas</a> sobre IA, machine learning y
               analítica de
-              datos, y 505 citas de otros expertos en
+              datos, y 459 citas de otros expertos en
               los últimos 3 años— me ha enseñado algo muy simple: la innovación solo tiene valor cuando resuelve
               problemas reales.
               <br><br>

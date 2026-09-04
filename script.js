@@ -40,10 +40,7 @@
   const cursor     = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
 
-  // Disable custom cursor on touch/mobile devices for performance
-  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth <= 768);
-
-  if (cursor && cursorRing && !isTouchDevice) {
+  if (cursor && cursorRing) {
     let mx = 0, my = 0, cx = 0, cy = 0, rx = 0, ry = 0;
     let initialMove = false;
 
@@ -759,13 +756,7 @@
 (function initHeroShader() {
   const canvas = document.getElementById('heroShader');
   const heroSection = document.getElementById('inicio');
-  
-  // Disable WebGL shader on touch/mobile devices for performance
-  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth <= 768);
-  if (!canvas || !heroSection || isTouchDevice) {
-    if (canvas) canvas.style.display = 'none';
-    return;
-  }
+  if (!canvas || !heroSection) return;
 
   const vsSource = `
     attribute vec4 aVertexPosition;
