@@ -1,3 +1,11 @@
 .vercel
 .env*.local
-Desarrollo_web/Pagweb azketum.mp4
+
+# ── VÍDEOS ORIGINALES (pesados) — usar .webm optimizados en su lugar ──
+Data/*.mp4
+Automatizacion/*.mp4
+Desarrollo_web/*.mp4
+Marketing/*.mp4
+
+# Logs temporales de conversión ffmpeg
+**/_convert_*.log
