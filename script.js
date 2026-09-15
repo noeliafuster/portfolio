@@ -404,9 +404,10 @@
       if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
       visibleSlides.forEach(function (_, i) {
-        const dot = document.createElement('div');
+        const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
         dot.setAttribute('aria-label', 'Ir al proyecto ' + (i + 1));
+        dot.setAttribute('type', 'button');
         dot.addEventListener('click', function () { goTo(i); });
         dotsContainer.appendChild(dot);
       });
