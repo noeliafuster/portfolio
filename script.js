@@ -758,6 +758,9 @@
   const heroSection = document.getElementById('inicio');
   if (!canvas || !heroSection) return;
 
+  // ── Skip WebGL on mobile/touch — CSS orbs already provide an animated background ──
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
   const vsSource = `
     attribute vec4 aVertexPosition;
     void main() {
@@ -765,8 +768,9 @@
     }
   `;
 
+  // mediump instead of highp: imperceptible visually, significantly faster on GPU
   const fsSource = `
-    precision highp float;
+    precision mediump float;
     uniform vec2 iResolution;
     uniform float iTime;
 
@@ -936,13 +940,23 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
   }
 
+  // Defer helper: use requestIdleCallback if available, otherwise setTimeout
+  const scheduleWhenIdle = window.requestIdleCallback
+    ? (cb) => requestIdleCallback(cb, { timeout: 2000 })
+    : (cb) => setTimeout(cb, 300);
+
   // Always visible when hero is in view; fades out on scroll (the effect the user loves)
   if ('IntersectionObserver' in window) {
     const shaderObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           canvas.classList.add('is-visible');
-          startShader();
+          if (!initialized) {
+            // ── First init: defer GLSL compilation so it doesn't block initial render ──
+            scheduleWhenIdle(startShader);
+          } else {
+            startShader();
+          }
         } else {
           canvas.classList.remove('is-visible');
           // Delay stop to let CSS fade-out transition play
@@ -952,9 +966,12 @@
     }, { threshold: 0.05 });
     shaderObs.observe(heroSection);
   } else {
-    // Fallback: just always run
-    canvas.classList.add('is-visible');
-    startShader();
+    // Fallback: defer even without IntersectionObserver
+    scheduleWhenIdle(() => {
+      canvas.classList.add('is-visible');
+      startShader();
+    });
   }
 })();
+
 
