@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 
 <head>
   <!-- Google Tag Manager & gtag (Deferred for performance) -->
@@ -325,7 +325,7 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Prevent flash of wrong theme -->
   <script>
-    (function () { var t = localStorage.getItem('theme'); if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })();
+    (function () { var t = localStorage.getItem('theme'); if (!t) t = 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); else document.documentElement.removeAttribute('data-theme'); })();
   </script>
 </head>
 
