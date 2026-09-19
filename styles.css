@@ -3576,3 +3576,14 @@ video {
     border-radius: var(--r-md);
   }
 }
+
+/* Fix mobile carousel overflow */
+@media (max-width: 768px) {
+  .carousel-slide.is-prev,
+  .carousel-slide.is-next {
+    opacity: 0 !important;
+    visibility: hidden;
+    transform: translateX(-50%) scale(0.5) !important;
+    pointer-events: none;
+  }
+}
