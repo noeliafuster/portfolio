@@ -1484,17 +1484,6 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
   }
 }
 
-@media (max-width: 480px) {
-  .impact-dashboard {
-    transform: scale(0.65);
-    margin-bottom: -60px;
-  }
-
-  .card-console {
-    display: none;
-  }
-}
-
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -3466,37 +3455,10 @@ video {
   }
 
   .hero-visual {
-    min-height: 350px;
-  }
-
-  .impact-dashboard {
-    transform: scale(0.7);
-    transform-origin: center;
-  }
-
-  .card-console {
-    display: none;
-  }
-
-  .dash-conn {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
-  .impact-dashboard {
-    transform: scale(0.6);
-    height: 300px;
-  }
-
-  .card-time {
-    right: -10px;
-  }
-
-  .card-data-accuracy {
-    left: -20px;
-  }
-}
 
 @media (max-width: 480px) {
   .bg-orb-1 {
