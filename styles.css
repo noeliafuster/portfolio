@@ -2753,23 +2753,38 @@ body>*:not(.bg-orbs):not(.nav-header):not(.cursor):not(.cursor-ring):not(#videoM
     text-align: left;
     display: grid;
     grid-template-columns: 56px 1fr;
-    gap: 20px;
-    align-items: start;
+    grid-template-areas:
+      "num icon"
+      "num title"
+      ".   desc";
+    gap: 4px 20px;
+    align-items: center;
   }
 
   .ps-number {
+    grid-area: num;
     margin: 0;
+    align-self: flex-start;
+    margin-top: 4px;
   }
 
   .ps-icon {
+    grid-area: icon;
     margin: 0;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
+    justify-self: flex-start;
+    color: var(--a);
   }
 
-  .process-step h3,
+  .process-step h3 {
+    grid-area: title;
+    margin-bottom: 0;
+  }
+
   .process-step p {
-    grid-column: 2;
+    grid-area: desc;
+    margin-top: 4px;
   }
 }
 
@@ -3585,5 +3600,39 @@ video {
     visibility: hidden;
     transform: translateX(-50%) scale(0.5) !important;
     pointer-events: none;
+  }
+}
+
+/* Fix mobile carousel overflow and formatting */
+@media (max-width: 768px) {
+  .carousel-3d-wrap {
+    perspective: none;
+    overflow-x: hidden;
+  }
+  .carousel-slide {
+    width: 90%;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  .carousel-slide.is-active {
+    transform: translateX(-50%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .carousel-slide.is-prev {
+    transform: translateX(-155%) !important;
+    opacity: 0.5 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .carousel-slide.is-next {
+    transform: translateX(55%) !important;
+    opacity: 0.5 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .carousel-slide:not(.is-active):not(.is-prev):not(.is-next) {
+    opacity: 0 !important;
+    visibility: hidden;
   }
 }
