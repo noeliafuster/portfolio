@@ -2,72 +2,232 @@
 <html lang="es" data-theme="light">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGS564ZRFT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-CGS564ZRFT');
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MRWTKW25');</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () { var d = document.documentElement; d.classList.add('js'); var t = null; try { t = localStorage.getItem('theme'); } catch (e) { } if (t === 'dark') d.removeAttribute('data-theme'); else d.setAttribute('data-theme', 'light'); })();
+  </script>
 
   <!-- ═══ SEO ═══ -->
-  <title>Publicaciones Científicas — Noelia Fuster | IA, Machine Learning y Analítica de Datos</title>
+  <title>Publicaciones científicas | Noelia Fuster</title>
   <meta name="description"
-    content="Explora las publicaciones científicas de Noelia Fuster sobre Inteligencia Artificial, Machine Learning, logística y analítica de datos. Más de 513 citas en los últimos 3 años.">
-  <meta name="keywords"
-    content="publicaciones científicas IA, papers machine learning, investigación analítica datos, Noelia Fuster publicaciones, inteligencia artificial logística, optimización supply chain">
+    content="Publicaciones científicas de Noelia Fuster sobre inteligencia artificial, machine learning, logística y analítica de datos, con DOI y acceso a los artículos.">
   <meta name="author" content="Noelia Fuster">
   <meta name="robots" content="index, follow">
-
-  <!-- ═══ URL CANÓNICA ═══ -->
-  <link rel="canonical" href="https://noeliafuster.com/publicaciones.html">
+  <meta name="theme-color" content="#9f7aea">
+  <link rel="canonical" href="https://noeliafuster.com/publicaciones">
 
   <!-- ═══ OPEN GRAPH ═══ -->
-  <meta property="og:title" content="Publicaciones Científicas — Noelia Fuster">
+  <meta property="og:title" content="Publicaciones científicas — Noelia Fuster">
   <meta property="og:description"
-    content="Investigaciones en IA, Machine Learning y Analítica de Datos. +513 citas académicas en los últimos 3 años.">
+    content="Investigaciones en IA, Machine Learning y Analítica de Datos publicadas en revistas y congresos internacionales.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://noeliafuster.com/publicaciones.html">
-  <meta property="og:image" content="https://noeliafuster.com/assets/og-image.png">
+  <meta property="og:url" content="https://noeliafuster.com/publicaciones">
+  <meta property="og:image" content="https://noeliafuster.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Noelia Fuster">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- ═══ FAVICON ═══ -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo negro.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-  <!-- ═══ PRELOAD ═══ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="logo.svg" as="image">
-
-  <!-- ═══ FUENTES ═══ -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap">
-  </noscript>
-  <script>
-    (function () { var t = localStorage.getItem('theme'); if (!t) t = 'light'; if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); else document.documentElement.removeAttribute('data-theme'); })();
+  <!-- ═══ STRUCTURED DATA ═══ -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://noeliafuster.com/#noelia",
+  "name": "Noelia Fuster",
+  "url": "https://noeliafuster.com/",
+  "sameAs": [
+    "https://orcid.org/0009-0008-7856-3985",
+    "https://www.linkedin.com/in/noeliafustercoma"
+  ]
+}
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Publicaciones científicas de Noelia Fuster",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Artificial Intelligence in Logistics Optimization with Sustainable Criteria: A Review",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Sustainability"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.3390/su16219145"
+        },
+        "url": "https://doi.org/10.3390/su16219145"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Automation in Inventory Redistribution within a Hybrid Supply Chain with Reverse Logistics: A Heuristic Approach Based on Business Rules",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "2025 IEEE International Conference on Engineering, Technology, and Innovation (ICE/ITMC)"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1109/ICE/ITMC65658.2025.11106665"
+        },
+        "url": "https://doi.org/10.1109/ICE/ITMC65658.2025.11106665"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Balancing Risk and Profit: Predicting the Performance of Potential New Customers in the Insurance Industry",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Information"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.3390/info15090546"
+        },
+        "url": "https://doi.org/10.3390/info15090546"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Enhancing Accessibility to Analytics Courses in Higher Education through AI, Simulation, and e-Collaborative Tools",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2024",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Information"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.3390/info15080430"
+        },
+        "url": "https://doi.org/10.3390/info15080430"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Optimizing Multi-Depot Vehicle Routing Under Dynamic Demand Conditions Using a Learnheuristic Approach",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "2025 IEEE International Conference on Engineering, Technology, and Innovation (ICE/ITMC)"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.1109/ICE/ITMC65658.2025.11106550"
+        },
+        "url": "https://doi.org/10.1109/ICE/ITMC65658.2025.11106550"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key Performance Indicators and Data Analytics",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "datePublished": "2023",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "Energies"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "DOI",
+          "value": "10.3390/en16207195"
+        },
+        "url": "https://doi.org/10.3390/en16207195"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "AI-Enhanced Decision-Making in Childhood Obesity Interventions",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "url": "https://noeliafuster.com/assets/pdfs/ai-decision-making-childhood-obesity.pdf"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "ScholarlyArticle",
+        "name": "Effectiveness of a Treatment for Childhood Obesity: A Case-Based Approach",
+        "inLanguage": "en",
+        "author": {
+          "@id": "https://noeliafuster.com/#noelia"
+        },
+        "url": "https://noeliafuster.com/assets/pdfs/effectiveness-treatment-childhood-obesity-preprint.pdf"
+      }
+    }
+  ]
+}
+  </script>
+
+  <!-- ═══ RECURSOS ═══ -->
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
 
   <style>
     /* ═══ PUBLICACIONES — PAGE-SPECIFIC STYLES ═══ */
@@ -168,7 +328,7 @@
 
     .pub-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
       gap: 28px;
     }
 
@@ -360,6 +520,31 @@
       transform: translateX(-4px);
     }
 
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pub-venue a {
+      color: var(--a);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .pub-orcid {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: var(--t3);
+    }
+
+    .pub-orcid a {
+      color: var(--a);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .pub-grid {
@@ -394,12 +579,8 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRWTKW25" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <a href="#main" class="skip-link">Saltar al contenido</a>
 
-  <!-- Orbes de fondo -->
   <div class="bg-orbs" aria-hidden="true">
     <div class="bg-orb bg-orb-1"></div>
     <div class="bg-orb bg-orb-2"></div>
@@ -408,42 +589,42 @@
     <div class="bg-orb bg-orb-5"></div>
   </div>
 
-  <!-- Cursor personalizado -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
   <!-- ═══ NAVEGACIÓN ═══ -->
   <header class="nav-header" id="navHeader">
     <nav class="nav-inner" aria-label="Navegación principal">
-      <a href="index.html" class="nav-logo" aria-label="Noelia Fuster — inicio">
-        <img src="logo.svg" alt="NF" width="38" height="38" class="nav-logo-img">
+      <a href="/" class="nav-logo" aria-label="Noelia Fuster — inicio">
+        <img src="/logo.svg" alt="" width="38" height="38" class="nav-logo-img">
         <span class="nav-logo-text">Noelia Fuster</span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#sobre-mi" class="nav-link">Sobre mí</a></li>
-        <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
-        <li><a href="index.html#proceso" class="nav-link">Proceso</a></li>
-        <li><a href="publicaciones.html" class="nav-link active">Publicaciones</a></li>
+        <li><a href="/#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="/#sobre-mi" class="nav-link">Sobre mí</a></li>
+        <li><a href="/#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="/#proceso" class="nav-link">Proceso</a></li>
+        <li><a href="/publicaciones" class="nav-link active" aria-current="page">Publicaciones</a></li>
       </ul>
-      <a href="index.html#contacto" class="nav-cta" data-magnetic>Hablemos</a>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <a href="/#contacto" class="nav-cta" data-magnetic>Hablemos</a>
+      <button class="nav-hamburger" id="navHamburger" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="navMobile">
         <span></span><span></span>
       </button>
     </nav>
-    <div class="nav-mobile" id="navMobile" aria-hidden="false">
+    <div class="nav-mobile" id="navMobile" aria-hidden="true" inert>
       <ul role="list">
-        <li><a href="index.html#servicios" class="mobile-link">Servicios</a></li>
-        <li><a href="index.html#sobre-mi" class="mobile-link">Sobre mí</a></li>
-        <li><a href="index.html#proyectos" class="mobile-link">Proyectos</a></li>
-        <li><a href="index.html#proceso" class="mobile-link">Proceso</a></li>
-        <li><a href="publicaciones.html" class="mobile-link">Publicaciones</a></li>
-        <li><a href="index.html#contacto" class="mobile-link mobile-link-cta">Hablemos →</a></li>
+        <li><a href="/#servicios" class="mobile-link">Servicios</a></li>
+        <li><a href="/#sobre-mi" class="mobile-link">Sobre mí</a></li>
+        <li><a href="/#proyectos" class="mobile-link">Proyectos</a></li>
+        <li><a href="/#proceso" class="mobile-link">Proceso</a></li>
+        <li><a href="/publicaciones" class="mobile-link" aria-current="page">Publicaciones</a></li>
+        <li><a href="/#contacto" class="mobile-link mobile-link-cta">Hablemos →</a></li>
       </ul>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- ═══ HERO PUBLICACIONES ═══ -->
     <section class="pub-hero">
       <div class="container">
@@ -456,18 +637,20 @@
         </p>
         <div class="pub-stats fade-up">
           <div class="pub-stat">
-            <div class="pub-stat-num">+8</div>
+            <div class="pub-stat-num">8</div>
             <div class="pub-stat-label">Publicaciones</div>
           </div>
           <div class="pub-stat">
-            <div class="pub-stat-num">+513</div>
+            <div class="pub-stat-num">513</div>
             <div class="pub-stat-label">Citas de otros expertos</div>
           </div>
           <div class="pub-stat">
-            <div class="pub-stat-num">+3</div>
-            <div class="pub-stat-label">Años de investigación</div>
+            <div class="pub-stat-num">5</div>
+            <div class="pub-stat-label">Áreas de aplicación</div>
           </div>
         </div>
+        <p class="pub-orcid fade-up">Perfil verificable en <a href="https://orcid.org/0009-0008-7856-3985"
+            target="_blank" rel="noopener">ORCID 0009-0008-7856-3985</a></p>
       </div>
     </section>
 
@@ -476,7 +659,7 @@
     </div>
 
     <!-- ═══ GRID PUBLICACIONES ═══ -->
-    <section class="pub-section">
+    <section class="pub-section" aria-label="Listado de publicaciones">
       <div class="container">
         <div class="pub-grid">
 
@@ -486,24 +669,32 @@
               <div class="pub-number">01</div>
               <span class="pub-category">Logística · IA</span>
             </div>
-            <h2 class="pub-title">Artificial Intelligence in Logistics Optimization with Sustainable Criteria: A Review
-            </h2>
-            <p class="pub-desc">Revisión exhaustiva de cómo la Inteligencia Artificial está transformando la
-              optimización logística incorporando criterios de sostenibilidad ambiental y eficiencia operativa.</p>
+            <h2 class="pub-title">Artificial Intelligence in Logistics Optimization with Sustainable Criteria: A Review</h2>
+            <p class="pub-venue">Sustainability · 2024 · vol. 16, 9145 · DOI <a href="https://doi.org/10.3390/su16219145" target="_blank" rel="noopener">10.3390/su16219145</a></p>
+            <p class="pub-desc">Revisión exhaustiva de cómo la Inteligencia Artificial está transformando la optimización logística incorporando criterios de sostenibilidad ambiental y eficiencia operativa.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Inteligencia Artificial</span>
               <span class="pub-tag pub-tag--blue">Logística</span>
               <span class="pub-tag pub-tag--green">Sostenibilidad</span>
             </div>
-            <a href="assets/pdfs/Artificial Intelligence in Logistics Optimization with Sustainable Criteria A Review.pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3390/su16219145" target="_blank" rel="noopener" class="pub-cta">
+                Ver en la revista
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/assets/pdfs/ai-logistics-sustainability-review-2024.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Descargar PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 2 -->
@@ -512,24 +703,24 @@
               <div class="pub-number">02</div>
               <span class="pub-category">Supply Chain · Heurística</span>
             </div>
-            <h2 class="pub-title">Automation in Inventory Redistribution within a Hybrid Supply Chain with Reverse
-              Logistics</h2>
-            <p class="pub-desc">Enfoque heurístico basado en reglas de negocio para automatizar la redistribución de
-              inventario en cadenas de suministro híbridas con logística inversa.</p>
+            <h2 class="pub-title">Automation in Inventory Redistribution within a Hybrid Supply Chain with Reverse Logistics: A Heuristic Approach Based on Business Rules</h2>
+            <p class="pub-venue">IEEE ICE/ITMC · 2025 · DOI <a href="https://doi.org/10.1109/ICE/ITMC65658.2025.11106665" target="_blank" rel="noopener">10.1109/ICE/ITMC65658.2025.11106665</a></p>
+            <p class="pub-desc">Enfoque heurístico basado en reglas de negocio para automatizar la redistribución de inventario en cadenas de suministro híbridas con logística inversa.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Automatización</span>
               <span class="pub-tag pub-tag--blue">Supply Chain</span>
               <span class="pub-tag pub-tag--green">Heurística</span>
             </div>
-            <a href="assets/pdfs/Automation_in_Inventory_Redistribution_within_a_Hybrid_Supply_Chain_with_Reverse_Logistics_A_Heuristic_Approach_Based_on_Business_Rules.pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1109/ICE/ITMC65658.2025.11106665" target="_blank" rel="noopener" class="pub-cta">
+                Ver en IEEE Xplore
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 3 -->
@@ -538,24 +729,32 @@
               <div class="pub-number">03</div>
               <span class="pub-category">Machine Learning · Seguros</span>
             </div>
-            <h2 class="pub-title">Balancing Risk and Profit: Predicting the Performance of Potential New Customers in
-              the Insurance Industry</h2>
-            <p class="pub-desc">Aplicación de modelos predictivos de Machine Learning para equilibrar riesgo y
-              rentabilidad en la captación de nuevos clientes del sector asegurador.</p>
+            <h2 class="pub-title">Balancing Risk and Profit: Predicting the Performance of Potential New Customers in the Insurance Industry</h2>
+            <p class="pub-venue">Information · 2024 · vol. 15, 546 · DOI <a href="https://doi.org/10.3390/info15090546" target="_blank" rel="noopener">10.3390/info15090546</a></p>
+            <p class="pub-desc">Aplicación de modelos predictivos de Machine Learning para equilibrar riesgo y rentabilidad en la captación de nuevos clientes del sector asegurador.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Machine Learning</span>
               <span class="pub-tag pub-tag--blue">Predicción</span>
               <span class="pub-tag pub-tag--green">Seguros</span>
             </div>
-            <a href="assets/pdfs/Balancing Risk and Profit Predicting the Performance of Potential New Customers in the Insurance Industry.pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3390/info15090546" target="_blank" rel="noopener" class="pub-cta">
+                Ver en la revista
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/assets/pdfs/balancing-risk-profit-insurance-2024.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Descargar PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 4 -->
@@ -564,24 +763,32 @@
               <div class="pub-number">04</div>
               <span class="pub-category">Educación · IA</span>
             </div>
-            <h2 class="pub-title">Enhancing Accessibility to Analytics Courses in Higher Education through AI,
-              Simulation, and e-Collaborative Tools</h2>
-            <p class="pub-desc">Investigación sobre cómo la IA, las simulaciones y las herramientas colaborativas pueden
-              democratizar el acceso a la formación en analítica de datos en la educación superior.</p>
+            <h2 class="pub-title">Enhancing Accessibility to Analytics Courses in Higher Education through AI, Simulation, and e-Collaborative Tools</h2>
+            <p class="pub-venue">Information · 2024 · vol. 15, 430 · DOI <a href="https://doi.org/10.3390/info15080430" target="_blank" rel="noopener">10.3390/info15080430</a></p>
+            <p class="pub-desc">Investigación sobre cómo la IA, las simulaciones y las herramientas colaborativas pueden democratizar el acceso a la formación en analítica de datos en la educación superior.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">IA en Educación</span>
               <span class="pub-tag pub-tag--blue">Simulación</span>
               <span class="pub-tag pub-tag--green">e-Learning</span>
             </div>
-            <a href="assets/pdfs/Enhancing Accessibility to Analytics Courses in Higher Education through AI, Simulation, and e-Collaborative Tools.pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3390/info15080430" target="_blank" rel="noopener" class="pub-cta">
+                Ver en la revista
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/assets/pdfs/accessibility-analytics-higher-education-2024.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Descargar PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 5 -->
@@ -590,24 +797,24 @@
               <div class="pub-number">05</div>
               <span class="pub-category">Optimización · Routing</span>
             </div>
-            <h2 class="pub-title">Optimizing Multi-Depot Vehicle Routing Under Dynamic Demand Conditions Using a
-              Learnheuristic Approach</h2>
-            <p class="pub-desc">Propuesta de un enfoque learnheurístico para la optimización del ruteo de vehículos con
-              múltiples depósitos en escenarios de demanda dinámica e incertidumbre.</p>
+            <h2 class="pub-title">Optimizing Multi-Depot Vehicle Routing Under Dynamic Demand Conditions Using a Learnheuristic Approach</h2>
+            <p class="pub-venue">IEEE ICE/ITMC · 2025 · DOI <a href="https://doi.org/10.1109/ICE/ITMC65658.2025.11106550" target="_blank" rel="noopener">10.1109/ICE/ITMC65658.2025.11106550</a></p>
+            <p class="pub-desc">Propuesta de un enfoque learnheurístico para la optimización del ruteo de vehículos con múltiples depósitos en escenarios de demanda dinámica e incertidumbre.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Learnheurística</span>
               <span class="pub-tag pub-tag--blue">Vehicle Routing</span>
               <span class="pub-tag pub-tag--green">Optimización</span>
             </div>
-            <a href="assets/pdfs/Optimizing_Multi-Depot_Vehicle_Routing_Under_Dynamic_Demand_Conditions_Using_a_Learnheuristic_Approach (1).pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1109/ICE/ITMC65658.2025.11106550" target="_blank" rel="noopener" class="pub-cta">
+                Ver en IEEE Xplore
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 6 -->
@@ -616,24 +823,32 @@
               <div class="pub-number">06</div>
               <span class="pub-category">Energía · Smart Cities</span>
             </div>
-            <h2 class="pub-title">Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key
-              Performance Indicators and Data Analytics</h2>
-            <p class="pub-desc">Uso de KPIs y analítica de datos para promover la eficiencia energética y la reducción
-              de emisiones en entornos urbanos, contribuyendo al desarrollo de ciudades inteligentes.</p>
+            <h2 class="pub-title">Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key Performance Indicators and Data Analytics</h2>
+            <p class="pub-venue">Energies · 2023 · vol. 16, 7195 · DOI <a href="https://doi.org/10.3390/en16207195" target="_blank" rel="noopener">10.3390/en16207195</a></p>
+            <p class="pub-desc">Uso de KPIs y analítica de datos para promover la eficiencia energética y la reducción de emisiones en entornos urbanos, contribuyendo al desarrollo de ciudades inteligentes.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Data Analytics</span>
               <span class="pub-tag pub-tag--blue">Eficiencia Energética</span>
               <span class="pub-tag pub-tag--green">Smart Cities</span>
             </div>
-            <a href="assets/pdfs/Promoting Energy Efficiency and Emissions Reduction in Urban Areas with Key Performance Indicators and Data Analytics.pdf"
-              target="_blank" rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3390/en16207195" target="_blank" rel="noopener" class="pub-cta">
+                Ver en la revista
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/assets/pdfs/energy-efficiency-kpis-urban-2023.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Descargar PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 7 -->
@@ -642,23 +857,24 @@
               <div class="pub-number">07</div>
               <span class="pub-category">IA · Salud</span>
             </div>
-            <h2 class="pub-title">AI Enhanced Decision Making in Childhood Obesity Interventions</h2>
-            <p class="pub-desc">Investigación sobre cómo la Inteligencia Artificial puede mejorar la toma de decisiones
-              en intervenciones clínicas contra la obesidad infantil, optimizando tratamientos y resultados.</p>
+            <h2 class="pub-title">AI-Enhanced Decision-Making in Childhood Obesity Interventions</h2>
+            <p class="pub-venue">Manuscrito de los autores</p>
+            <p class="pub-desc">Investigación sobre cómo la Inteligencia Artificial puede mejorar la toma de decisiones en intervenciones clínicas contra la obesidad infantil, optimizando tratamientos y resultados.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Inteligencia Artificial</span>
               <span class="pub-tag pub-tag--blue">Salud</span>
               <span class="pub-tag pub-tag--green">Obesidad Infantil</span>
             </div>
-            <a href="assets/pdfs/AI Enhanced Decision Making in Childhood Obesity Interventions.pdf" target="_blank"
-              rel="noopener" class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="/assets/pdfs/ai-decision-making-childhood-obesity.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Leer publicación
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
           <!-- Publicación 8 -->
@@ -667,31 +883,31 @@
               <div class="pub-number">08</div>
               <span class="pub-category">Analítica · Salud</span>
             </div>
-            <h2 class="pub-title">Effectiveness of a Treatment for Childhood Obesity</h2>
-            <p class="pub-desc">Análisis de la efectividad de un tratamiento contra la obesidad infantil, utilizando
-              técnicas analíticas para evaluar resultados clínicos y factores determinantes del éxito terapéutico.</p>
+            <h2 class="pub-title">Effectiveness of a Treatment for Childhood Obesity: A Case-Based Approach</h2>
+            <p class="pub-venue">Preprint · enviado a Current Problems in Pediatric and Adolescent Health Care</p>
+            <p class="pub-desc">Análisis de la efectividad de un tratamiento contra la obesidad infantil, utilizando técnicas analíticas para evaluar resultados clínicos y factores determinantes del éxito terapéutico.</p>
             <div class="pub-tags">
               <span class="pub-tag pub-tag--violet">Analítica de Datos</span>
               <span class="pub-tag pub-tag--blue">Tratamiento Clínico</span>
               <span class="pub-tag pub-tag--green">Obesidad Infantil</span>
             </div>
-            <a href="assets/pdfs/Effectiveness of a Treatment for CHildhood Obesity.pdf" target="_blank" rel="noopener"
-              class="pub-cta">
-              Leer publicación
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
+            <div class="pub-links">
+              <a href="/assets/pdfs/effectiveness-treatment-childhood-obesity-preprint.pdf" target="_blank" rel="noopener" class="pub-cta">
+                Leer publicación
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </article>
 
         </div>
 
-        <!-- Back to home -->
-        <a href="index.html" class="pub-back fade-up">
+        <a href="/" class="pub-back fade-up">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-            stroke-linejoin="round">
+            stroke-linejoin="round" aria-hidden="true">
             <path d="M19 12H5" />
             <path d="m12 19-7-7 7-7" />
           </svg>
@@ -704,28 +920,70 @@
   <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="index.html" class="footer-logo">
-        <img src="logo.svg" alt="Noelia Fuster" width="28" height="28">
+      <a href="/" class="footer-logo">
+        <img src="/logo.svg" alt="" width="28" height="28">
         <span>Noelia Fuster</span>
       </a>
-      <p class="footer-copy">© 2026 Noelia Fuster. Todos los derechos reservados.</p>
-      <a href="#" class="back-top" aria-label="Volver arriba">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <div class="footer-meta">
+        <nav class="footer-links" aria-label="Enlaces legales y de contacto">
+          <a href="mailto:hola@noeliafuster.com" class="footer-link">hola@noeliafuster.com</a>
+          <a href="https://www.linkedin.com/in/noeliafustercoma" class="footer-link" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+          <a href="/aviso-legal" class="footer-link">Aviso legal</a>
+          <a href="/privacidad" class="footer-link">Privacidad</a>
+          <a href="/cookies" class="footer-link">Cookies</a>
+          <button type="button" class="footer-link" data-open-cookie-settings>Configurar cookies</button>
+        </nav>
+        <p class="footer-copy">© <span data-current-year>2026</span> Noelia Fuster. Todos los derechos reservados.</p>
+      </div>
+      <a href="#main" class="back-top" aria-label="Volver arriba">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
           <path d="M18 15l-6-6-6 6" />
         </svg>
       </a>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- ═══ AVISO DE COOKIES ═══ -->
+  <div class="p-notice" id="p-notice" role="dialog" aria-labelledby="pNoticeTitle" aria-describedby="pNoticeText">
+    <p class="p-notice-title" id="pNoticeTitle">Tu privacidad</p>
+    <p class="p-notice-text" id="pNoticeText">Uso cookies analíticas de Google Analytics para saber cómo se usa la web
+      y mejorarla. Solo se activan si las aceptas. Más información en la <a href="/cookies">política de
+        cookies</a>.</p>
+    <div class="p-notice-actions">
+      <button type="button" class="btn-primary" id="accept-p-notice">Aceptar</button>
+      <button type="button" class="btn-ghost" id="reject-p-notice">Rechazar</button>
+    </div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro">
+    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
 
   <a href="https://wa.me/34684789507" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
     aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
     </svg>
   </a>
+
+  <script src="/script.js" defer></script>
 </body>
 
 </html>

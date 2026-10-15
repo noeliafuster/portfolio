@@ -6,6 +6,16 @@ Data/*.mp4
 Automatizacion/*.mp4
 Desarrollo_web/*.mp4
 Marketing/*.mp4
+# …salvo las versiones H.264 ligeras que sirven de alternativa para Safari
+!**/*-h264.mp4
 
 # Logs temporales de conversión ffmpeg
 **/_convert_*.log
+
+# Informes de Lighthouse y listados temporales
+report-*.json
+Data/files*.txt
+
+# PDFs de editor (IEEE) — se enlazan por DOI, no se pueden redistribuir
+assets/pdfs/Automation_in_Inventory_*.pdf
+assets/pdfs/Optimizing_Multi-Depot_*.pdf

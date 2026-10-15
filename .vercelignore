@@ -1,0 +1,32 @@
+# Archivos fuente o pesados que no deben publicarse en la web
+.env*
+report-*.json
+**/_convert_*.log
+Data/files*.txt
+Data/*-miniatura.png
+Data/Grandia-Project.mp4
+Data/Transport-Project.mp4
+Data/RRHH-Project.mp4
+Data/Cafeteria-Project.mp4
+Desarrollo_web/WebDentistaAntes1.mp4
+Desarrollo_web/WebDentistaDespues1.mp4
+Desarrollo_web/Pagweb_azketum.mp4
+Desarrollo_web/Pagweb azketum.mp4
+Automatizacion/ERP-Powerapp.mp4
+Logo Blanco NF.svg
+Logo Negro NF.svg
+logo Noelia Fuster.png
+Noelia - Foto.jpg
+Marketing/*.svg
+Marketing/*.png
+Marketing/*.jpg
+Empresas_trabajadas/*.png
+Empresas_trabajadas/Generalitat.webp
+Empresas_trabajadas/Logo - Tulip Consulting.webp
+assets/og-image.png
+assets/favicon.ico
+assets/favicon.png
+assets/logo blanco.png
+assets/logo negro.png
+assets/pdfs/Automation_in_Inventory_*.pdf
+assets/pdfs/Optimizing_Multi-Depot_*.pdf

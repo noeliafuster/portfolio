@@ -3,16 +3,14 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://noeliafuster.com/</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-15</lastmod>
     <image:image>
-      <image:loc>https://noeliafuster.com/Noelia - Foto.jpg</image:loc>
+      <image:loc>https://noeliafuster.com/assets/noelia-fuster.jpg</image:loc>
       <image:title>Noelia Fuster — Consultora de Transformación Digital</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://noeliafuster.com/logo.svg</image:loc>
-      <image:title>Logo Noelia Fuster</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://noeliafuster.com/publicaciones</loc>
+    <lastmod>2026-10-15</lastmod>
   </url>
 </urlset>
