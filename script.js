@@ -58,10 +58,12 @@
   const acceptBtn = document.getElementById('accept-p-notice');
   const rejectBtn = document.getElementById('reject-p-notice');
 
-  function showNotice() {
+  // moveFocus solo cuando lo abre el usuario ("Configurar cookies"): al cargar la
+  // página no se roba el foco (y se evita un reflow forzado que retrasaba la carga)
+  function showNotice(moveFocus) {
     if (!pNotice) return;
     pNotice.classList.add('show');
-    if (acceptBtn) acceptBtn.focus({ preventScroll: true });
+    if (moveFocus === true && acceptBtn) acceptBtn.focus({ preventScroll: true });
   }
 
   function hideNotice(status) {
@@ -81,13 +83,14 @@
   if (consent === 'accepted') {
     loadAnalytics();
   } else if (!consent && pNotice) {
-    setTimeout(showNotice, 1200);
+    // Sin retraso: antes el aviso aparecía a los 1,2 s y era el LCP en móvil
+    requestAnimationFrame(function () { showNotice(false); });
   }
 
   if (acceptBtn) acceptBtn.addEventListener('click', () => hideNotice('accepted'));
   if (rejectBtn) rejectBtn.addEventListener('click', () => hideNotice('rejected'));
   document.querySelectorAll('[data-open-cookie-settings]').forEach(btn => {
-    btn.addEventListener('click', showNotice);
+    btn.addEventListener('click', function () { showNotice(true); });
   });
 
   /* ── THEME TOGGLE (DARK / LIGHT) ──────────────────────── */
@@ -178,7 +181,8 @@
     if (navHeader) navHeader.classList.toggle('scrolled', window.scrollY > 20);
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  // En el siguiente frame para no forzar un layout síncrono durante la carga
+  requestAnimationFrame(handleScroll);
 
   function setMobileMenu(open) {
     hamburger.setAttribute('aria-expanded', String(open));
@@ -547,6 +551,22 @@
       syncVideos();
     }
 
+    // La pista mide lo que la tarjeta visible más alta (antes tenía alturas fijas
+    // y las tarjetas se salían por abajo, tapando los puntos)
+    function fitTrackHeight() {
+      let max = 0;
+      visibleSlides.forEach(function (s) { max = Math.max(max, s.offsetHeight); });
+      if (max) track.style.height = max + 'px';
+    }
+
+    let resizeRaf = null;
+    window.addEventListener('resize', function () {
+      if (resizeRaf) return;
+      resizeRaf = requestAnimationFrame(function () { resizeRaf = null; fitTrackHeight(); });
+    }, { passive: true });
+    // Las imágenes tienen alto fijo por CSS, pero las fuentes pueden cambiar el alto del texto
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTrackHeight);
+
     function goTo(index) {
       const total = visibleSlides.length;
       if (!total) return;
@@ -627,6 +647,7 @@
       currentIndex = 0;
       buildDots();
       updateCarousel(true);
+      fitTrackHeight();
     }
 
     tabs.forEach(function (tab, i) {
@@ -655,6 +676,8 @@
 
     buildDots();
     updateCarousel(false);
+    // Tras el primer pintado, para no forzar un layout síncrono durante la carga
+    requestAnimationFrame(function () { setTimeout(fitTrackHeight, 0); });
   })();
 
   /* ── FLIP CARDS — TAP EN MÓVIL Y TECLADO ───────────────── */
@@ -941,14 +964,26 @@
     return true;
   }
 
+  // Resolución interna limitada (el CSS la estira a pantalla completa):
+  // en monitores 2K/4K evita calcular millones de píxeles por frame.
+  const MAX_RENDER_WIDTH = 1280;
+
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const scale = Math.min(1, MAX_RENDER_WIDTH / window.innerWidth);
+    canvas.width = Math.round(window.innerWidth * scale);
+    canvas.height = Math.round(window.innerHeight * scale);
     if (gl) gl.viewport(0, 0, canvas.width, canvas.height);
   }
 
-  function render() {
+  // 30 fps son suficientes para un fondo que se mueve despacio
+  const FRAME_MS = 1000 / 30;
+  let lastFrame = 0;
+
+  function render(now) {
     if (!isRunning) return;
+    rafId = requestAnimationFrame(render);
+    if (now && now - lastFrame < FRAME_MS) return;
+    lastFrame = now || 0;
     const t = (Date.now() - startTime) / 1000;
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -959,7 +994,6 @@
     gl.vertexAttribPointer(programInfo.attrib, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(programInfo.attrib);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    rafId = requestAnimationFrame(render);
   }
 
   function startShader() {

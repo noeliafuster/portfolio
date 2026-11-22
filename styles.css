@@ -237,22 +237,9 @@ html {
 
 @media (max-width: 1440px) {
   html {
-    font-size: 14px;
-    /* Portátiles de 13/15 pulgadas: reduce todo un 12.5% */
-  }
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 13px;
-    /* Tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  html {
     font-size: 14.5px;
-    /* En móvil compensamos un poco para legibilidad */
+    /* Portátiles, tablets y móvil: escala única para que el tamaño
+       nunca crezca al estrechar la ventana */
   }
 }
 
@@ -406,7 +393,6 @@ textarea {
   top: -300px;
   right: -200px;
   background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(99, 60, 220, 0.3) 40%, transparent 70%);
-  filter: blur(100px);
   animation: orbFloat1 24s ease-in-out infinite alternate;
 }
 
@@ -416,7 +402,6 @@ textarea {
   bottom: -200px;
   left: -150px;
   background: radial-gradient(circle, rgba(59, 130, 246, 0.55) 0%, rgba(30, 80, 200, 0.25) 40%, transparent 70%);
-  filter: blur(120px);
   animation: orbFloat2 28s ease-in-out infinite alternate;
 }
 
@@ -426,7 +411,6 @@ textarea {
   top: 30%;
   left: 30%;
   background: radial-gradient(circle, rgba(16, 185, 129, 0.45) 0%, rgba(10, 120, 90, 0.2) 40%, transparent 70%);
-  filter: blur(100px);
   animation: orbFloat3 20s ease-in-out infinite alternate;
 }
 
@@ -436,7 +420,6 @@ textarea {
   top: 15%;
   left: 5%;
   background: radial-gradient(circle, rgba(236, 72, 153, 0.35) 0%, transparent 65%);
-  filter: blur(110px);
   animation: orbFloat4 32s ease-in-out infinite alternate;
 }
 
@@ -446,7 +429,6 @@ textarea {
   bottom: 10%;
   right: 10%;
   background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
-  filter: blur(120px);
   animation: orbFloat5 26s ease-in-out infinite alternate;
 }
 
@@ -1451,10 +1433,7 @@ html.js .fade-up.visible {
     gap: 60px;
   }
 
-  .hero-visual {
-    order: -1;
-  }
-
+  /* El panel decorativo va después del texto para que el titular quede arriba */
   .hero-headline {
     font-size: clamp(2.4rem, 8vw, 3.6rem);
   }
@@ -3175,10 +3154,6 @@ video {
 }
 
 @media (max-width: 1366px) {
-  html {
-    font-size: 14.5px;
-  }
-
   .hero-grid {
     gap: 50px;
   }
@@ -3293,13 +3268,11 @@ video {
   .bg-orb-1 {
     width: 400px;
     height: 400px;
-    filter: blur(60px);
   }
 
   .bg-orb-2 {
     width: 300px;
     height: 300px;
-    filter: blur(60px);
   }
 
   .bg-orb-3 {
@@ -3841,4 +3814,203 @@ mark.todo {
 /* En tema claro el panel era oscuro con texto oscuro */
 [data-theme="light"] .nav-mobile {
   background: rgba(250, 250, 250, 0.97);
+}
+
+/* ══════════════════════════════════════════════════════════
+   AUDITORÍA 2026-11 — responsive, rendimiento y accesibilidad
+   Este bloque va al final a propósito: corrige reglas que antes
+   quedaban anuladas por estar escritas antes que la regla base.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── MENÚ: hamburguesa también en tablet (antes se salía de pantalla) ── */
+@media (max-width: 1024px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+/* ── HERO: el texto aparece sin esperar al JS (mejora el LCP) ── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* El titular solo se desplaza (sin opacidad 0) para que cuente como pintado al instante */
+@keyframes heroRise {
+  from { transform: translateY(20px); }
+  to   { transform: none; }
+}
+
+html.js .hero .fade-up {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  animation: heroFadeUp 0.8s var(--ease) both;
+}
+
+html.js .hero .hero-headline {
+  animation-name: heroRise;
+  animation-delay: 0.05s;
+}
+
+html.js .hero .hero-sub { animation-delay: 0.12s; }
+html.js .hero .hero-actions { animation-delay: 0.2s; }
+html.js .hero .hero-visual { animation-delay: 0.25s; }
+
+/* ── CARRUSEL: flechas siempre dentro de la pantalla ── */
+.carousel-3d-wrap {
+  min-height: 0;
+}
+
+.carousel-3d-nav {
+  /* Nunca más cerca de 12px del borde de la ventana */
+  left: max(-60px, calc((100% - 100vw) / 2 + 12px));
+  right: max(-60px, calc((100% - 100vw) / 2 + 12px));
+}
+
+/* Puntos: zona táctil de 24×24 px con el mismo aspecto visual */
+.carousel-dots {
+  gap: 2px;
+}
+
+.carousel-dot,
+.carousel-dot.active {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-dot::before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-3);
+  transition: width 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 30px;
+}
+
+.carousel-dot.active::before {
+  width: 22px;
+  border-radius: 3px;
+  background: var(--a);
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid var(--a);
+  outline-offset: 2px;
+}
+
+/* Tarjetas laterales: más opacas para que su texto tenga contraste suficiente */
+.carousel-slide.is-prev,
+.carousel-slide.is-next {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  /* Flechas y puntos debajo de la tarjeta, no superpuestos */
+  .carousel-3d-nav {
+    position: static;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 24px;
+    left: auto;
+    right: auto;
+  }
+
+  .carousel-dots {
+    position: static;
+    transform: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .carousel-3d-wrap {
+    padding: 30px 0 20px;
+  }
+
+  /* Las laterales quedan fuera de pantalla en móvil: se ocultan del todo */
+  .carousel-slide.is-prev,
+  .carousel-slide.is-next {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* ── CONTRASTE (tema claro) ── */
+[data-theme="light"] .card-status {
+  color: #047857;
+}
+
+/* ── TAMAÑO MÍNIMO DE TEXTO: 11px ── */
+.flip-label,
+.cs-cat {
+  font-size: max(11px, 0.68rem);
+}
+
+.flip-tag,
+.flip-tags span,
+.cs-tags span,
+.card-status {
+  font-size: max(11px, 0.65rem);
+}
+
+.eyebrow {
+  font-size: max(11px, 0.72rem);
+}
+
+.scroll-hint span {
+  font-size: max(11px, 0.7rem);
+}
+
+.x-mark {
+  font-size: max(11px, 0.75rem);
+}
+
+/* ── CARRUSEL: las tarjetas laterales no ensanchan la página ──
+   (en tablets táctiles hacían que el navegador mostrara la web alejada) */
+.work-section {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/* ── TAMAÑO MÍNIMO DE TEXTO (resto de etiquetas) ── */
+.ts-label,
+.ptab,
+.flip-hint {
+  font-size: max(11px, 0.7rem);
+}
+
+.ps-number {
+  font-size: max(12px, 0.75rem);
+}
+
+/* Enlaces del pie: zona táctil de al menos 24px de alto */
+.footer-link {
+  padding: 3px 0;
+}
+
+.form-legal {
+  font-size: max(11px, 0.72rem);
+}
+
+.card-label {
+  font-size: max(11px, 0.65rem);
 }
